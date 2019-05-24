@@ -1,0 +1,16 @@
+﻿
+@using CompanyDetails.Models
+@model IEnumerable<CompanyDetails.Models.Department>
+<div style="font-family:Arial">
+    @{
+        ViewBag.Title = "Departments List";
+    }
+    <h2>Select each department to view the employees within it</h2>
+    <ul>
+        @foreach (Department department in @Model)
+        {
+            <li>@Html.ActionLink(department.Department_Name, "Index", "Employee", new { departmentId = department.Department_Id }, null)</li>
+        }
+    </ul>
+</div>
+
